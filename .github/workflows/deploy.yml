@@ -1,0 +1,23 @@
+name: Auto Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main  # 또는 사용 중인 브랜치
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH & Deploy
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: http://index.zapto.org
+          username: index
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd ~/github/CodeLounge-Web
+            git pull
+            make
