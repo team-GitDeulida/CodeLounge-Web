@@ -4,7 +4,7 @@ title: Button
 description: 버튼 컴포넌트
 category: SwiftUI
 type: other
-image: /images/ios-button.png
+image: /images/SwiftUI/button.png
 ---
 
 ```swift

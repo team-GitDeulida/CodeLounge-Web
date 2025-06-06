@@ -4,7 +4,7 @@ title: Rectangle
 description: Rectangle 컴포넌트
 category: SwiftUI
 type: other
-image: /images/ios-rectangle.png
+image: /images/SwiftUI/ios-rectangle.png
 ---
 
 ```swift
