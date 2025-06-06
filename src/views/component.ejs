@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= component.title %> - CodeLounge Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hack:wght@400;700&display=swap">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .preview-container, .code-container {
+            position: sticky;
+            top: 20px;
+        }
+        .header-space {
+            height: 100px;
+        }
+        .code-container {
+            height: 100%;
+        }
+        .code-container pre {
+            height: 100%;
+            margin: 0;
+            font-family: 'Hack', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .code-container .card {
+            height: 100%;
+        }
+        .code-container .card-body {
+            height: calc(100% - 50px);
+            overflow: auto;
+        }
+        /* 컴포넌트 스타일 */
+        /* <%= component.css %> */
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand text-center w-100" href="/">CodeLounge</a>
+        </div>
+    </nav>
+
+    <div class="container-lg mt-4">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="preview-container">
+                    <h1 class="mb-4"><%= component.title %></h1>
+                    <p class="lead mb-4"><%= component.description %></p>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">미리보기</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="preview" style="display: flex; justify-content: center; align-items: center;">
+                                <% if (component.type === 'web') { %>
+                                    <%- component.html %>
+                                <% } else { %>
+                                    <img src="<%= component.image %>" alt="<%= component.title %> 미리보기" class="component-preview-image">
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="code-container">
+                    <div class="header-space mb-4"></div>
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">코드</h5>
+                            <button class="btn btn-sm btn-outline-primary" onclick="copyCode()">복사</button>
+                        </div>
+                        <div class="card-body">
+                            <pre><code class="language-<%= component.type === 'web' ? 'html' : 'swift' %>"><%= component.fullCode %></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-swift.min.js"></script>
+    <script>
+        // 코드 복사 기능
+        function copyCode() {
+            const code = `<%= component.fullCode %>`;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('코드가 복사되었습니다!');
+            });
+        }
+
+        // 저장된 테마 불러오기
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html> 
