@@ -13,7 +13,7 @@ jobs:
       - name: SSH & Deploy
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: http://index.zapto.org
+          host: index.zapto.org
           username: index
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
