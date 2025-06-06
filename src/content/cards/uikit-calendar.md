@@ -29,12 +29,6 @@ final class BasicCalendarVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 뒤로가기 버튼 숨기기
-        self.navigationItem.hidesBackButton = true
-        
-        // 탭 바 숨기기
-        self.tabBarController?.tabBar.isHidden = true
-        
         self.makeUI()
         self.constraints()
         self.setCalendar()
