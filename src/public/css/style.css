@@ -10,8 +10,8 @@
     --btn-outline-color: #000000;
     --btn-outline-hover-bg: #000000;
     --btn-outline-hover-color: #ffffff;
-    --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    --card-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --card-hover-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
     --code-bg: #f8f9fa;
     --code-color: #333333;
 }
@@ -28,8 +28,8 @@
     --btn-outline-color: #ffffff;
     --btn-outline-hover-bg: #ffffff;
     --btn-outline-hover-color: #1a1a1a;
-    --card-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    --card-hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --card-hover-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
     --code-bg: #2d2d2d;
     --code-color: #ffffff;
 }
@@ -64,7 +64,7 @@ body {
 
 .component-preview {
     width: 100%;
-    height: 600px;
+    height: 500px;
     object-fit: contain;
     padding: 20px;
     background: var(--preview-bg) !important;
@@ -247,4 +247,42 @@ pre code {
 .card-body {
     background: var(--card-bg);
     color: var(--text-color);
+}
+
+/* 검색 섹션 스타일 */
+.search-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-section .input-group {
+    box-shadow: var(--card-shadow);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-section .form-control {
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.search-section .form-control:focus {
+    box-shadow: none;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.search-section .btn {
+    padding: 12px 25px;
+    background: var(--btn-outline-color);
+    border: none;
+    color: var(--btn-outline-hover-color);
+}
+
+.search-section .btn:hover {
+    background: var(--btn-outline-hover-bg);
+    color: var(--btn-outline-hover-color);
 } 

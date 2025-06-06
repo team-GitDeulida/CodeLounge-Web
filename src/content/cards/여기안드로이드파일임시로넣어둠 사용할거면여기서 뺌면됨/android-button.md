@@ -1,10 +1,10 @@
 ---
 id: 3
 title: Android 버튼
-description: Material Design 스타일의 Android 버튼
+description: Android 버튼
 category: android
 type: other
-image: /images/android-button.png
+image: /images/ios-button.png
 ---
 
 ```kotlin

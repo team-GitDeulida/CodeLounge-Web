@@ -15,19 +15,30 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand text-center w-100" href="/">CodeLounge</a>
         </div>
     </nav>
 
     <div class="container mt-4">
+        <!-- 검색 섹션 추가 -->
+        <div class="search-section mb-4">
+            <div class="input-group">
+                <input type="text" id="searchInput" class="form-control" placeholder="검색어를 입력하세요...">
+                <button class="btn btn-primary" type="button" id="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
         <!-- 카테고리 섹션 추가 -->
         <div class="category-section mb-4">
             <div class="btn-group" role="group" aria-label="Category buttons">
                 <button type="button" class="btn btn-outline-primary active" data-category="all">전체</button>
-                <button type="button" class="btn btn-outline-primary" data-category="web">Web</button>
-                <button type="button" class="btn btn-outline-primary" data-category="ios">iOS</button>
+                <button type="button" class="btn btn-outline-primary" data-category="UIKit">UIKit</button>
+                <button type="button" class="btn btn-outline-primary" data-category="SwiftUI">SwiftUI</button>
                 <button type="button" class="btn btn-outline-primary" data-category="android">Android</button>
+                <button type="button" class="btn btn-outline-primary" data-category="web">Web</button>
             </div>
         </div>
 

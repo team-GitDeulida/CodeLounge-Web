@@ -1,8 +1,8 @@
 ---
 id: 2
-title: iOS 버튼
-description: iOS 스타일의 버튼 컴포넌트
-category: ios
+title: Button
+description: 버튼 컴포넌트
+category: SwiftUI
 type: other
 image: /images/ios-button.png
 ---

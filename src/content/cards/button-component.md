@@ -1,17 +1,24 @@
 ---
 id: 1
 title: html 버튼
-description: 기본적인 버튼 스타일과 애니메이션
+description: 기본적인 버튼
 category: web
 type: web
 ---
 
 ```html
-<button class="btn btn-primary">기본 버튼</button>
-<button class="btn btn-primary hover-effect">호버 효과</button>
+<div class="button-container">
+    <button class="btn btn-primary">기본 버튼</button>
+    <button class="btn btn-primary hover-effect">호버 효과</button>
+</div>
 ```
 
 ```css
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
 .btn {
     padding: 10px 20px;
     border: none;
@@ -21,7 +28,7 @@ type: web
 }
 
 .btn-primary {
-    background-color: #007bff;
+    background-color:rgb(49, 62, 240);
     color: white;
 }
 

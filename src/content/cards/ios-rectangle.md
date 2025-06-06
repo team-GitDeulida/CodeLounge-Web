@@ -1,8 +1,8 @@
 ---
 id: 4
-title: iOS 사각형
-description: iOS 스타일의 Rectangle 컴포넌트
-category: ios
+title: Rectangle
+description: Rectangle 컴포넌트
+category: SwiftUI
 type: other
 image: /images/ios-rectangle.png
 ---
