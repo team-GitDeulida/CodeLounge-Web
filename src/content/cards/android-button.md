@@ -27,7 +27,7 @@ fun BasicButton() {
             // 버튼의 높이를 60dp로 설정
             .height(100.dp)
     ) {
-        Text("Button")
+        Text("버튼")
     }
 }
 ``` 
