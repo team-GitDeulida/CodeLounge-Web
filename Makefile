@@ -5,7 +5,7 @@ PORT        = 3000
 .PHONY: deploy
 
 deploy:
-	@echo "👉 소유권을 index:index로 재설정 중..."
+	@echo "👉 소유권을 index:index로 재설정합 중..."
 	@sudo chown -R index:index .
 
 	@echo "👉 Git 최신 코드 가져오는 중..."
@@ -27,3 +27,4 @@ deploy:
 
 	@echo "🚀 컨테이너 실행 중..."
 	docker run -d --name $(APP_NAME) -p $(PORT):$(PORT) $(IMAGE_NAME)
+
