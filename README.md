@@ -42,6 +42,11 @@ cp .env.example .env
 
 4. 서버 실행
 ```bash
+
+# 개발 중
+npm run dev   
+
+# 배포
 npm start
 ```
 
