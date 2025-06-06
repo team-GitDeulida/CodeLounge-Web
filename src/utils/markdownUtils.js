@@ -1,6 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const matter = require('gray-matter');
+const { marked } = require('marked');
 
 // 마크다운 파일의 메타데이터와 컨텐츠를 파싱하는 함수
 async function parseMarkdownFile(filePath) {
@@ -11,6 +12,15 @@ async function parseMarkdownFile(filePath) {
         // 코드 블록 추출
         const codeBlocks = content.split('```').filter((block, index) => index % 2 === 1);
         
+        // 설명 부분 추출 (코드 블록 이후의 텍스트)
+        const descriptionText = content.split('```').filter((block, index) => index % 2 === 0)
+            .slice(1) // 첫 번째 블록(코드 블록 이전) 제외
+            .join('')
+            .trim();
+        
+        // 마크다운을 HTML로 변환
+        const descriptionHtml = marked(descriptionText);
+        
         // 웹 컴포넌트인 경우 HTML과 CSS 분리
         if (data.type === 'web') {
             const html = codeBlocks[0]?.replace(/^html\n/, '') || '';
@@ -20,6 +30,8 @@ async function parseMarkdownFile(filePath) {
                 ...data,
                 html,
                 css,
+                descriptionText,
+                descriptionHtml,
                 get fullCode() {
                     return `${this.html}\n\n<style>\n${this.css}\n</style>`;
                 },
@@ -42,6 +54,8 @@ async function parseMarkdownFile(filePath) {
         return {
             ...data,
             code: codeBlocks[0]?.replace(/^[a-z]+\n/, '') || '',
+            descriptionText,
+            descriptionHtml,
             get fullCode() {
                 return this.code;
             }
