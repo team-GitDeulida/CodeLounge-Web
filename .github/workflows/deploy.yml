@@ -1,3 +1,7 @@
+# 서버에서 사용자 index를 docker 그룹에 추가
+# sudo usermod -aG docker index
+
+
 name: Auto Deploy to VPS
 
 on:
