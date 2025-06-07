@@ -1,7 +1,7 @@
 ---
 id: 8
-title: CustomSegmentControl
-description: 커스텀 세그먼트 컨트롤 + 언더라인 이동 UI 구현 예제
+title: SegmentControl
+description: 커스텀 세그먼트 컨트롤
 category: UIKit
 type: other
 image: /images/UIKit/segment-control.gif
