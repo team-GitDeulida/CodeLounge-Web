@@ -30,7 +30,7 @@
     --btn-outline-hover-color: #1a1a1a;
     --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     --card-hover-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
-    --code-bg: #2d2d2d;
+    --code-bg: rgba(45, 45, 45, 0.1);
     --code-color: #ffffff;
 }
 
@@ -228,7 +228,7 @@ body {
 
 /* 코드 블록 스타일 */
 pre {
-    background: var(--code-bg) !important;
+    background: transparent !important;
     border-radius: 8px;
 }
 
@@ -249,9 +249,11 @@ pre code {
 }
 
 .card-body {
-    background: var(--card-bg);
+    background: transparent;
     color: var(--text-color);
+    padding: 1rem;
 }
+
 
 /* 검색 섹션 스타일 */
 .search-section {
