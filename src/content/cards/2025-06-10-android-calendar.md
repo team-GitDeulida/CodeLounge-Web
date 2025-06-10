@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import java.util.*
 
 @Composable
-fun FullCalendar() {
+fun CustomCalendar() {
     var calendar by remember { mutableStateOf(Calendar.getInstance()) }
     val today = Calendar.getInstance()
 
@@ -113,9 +113,9 @@ fun FullCalendar() {
 ##설명
 
 이 예제는 실전 캘린더 기능을 추가합니다:
-1. 'Calendar.getInstance()'로 현재 날짜 가져오기(Cyan으로 표시)  
-2. 'IconButton'으로 월 이동 기능 구현  
-3. 'Calendar.add(Calendar.MONTH, ±1)'로 월 변경  
+1. `Calendar.getInstance()`로 현재 날짜 가져오기(Cyan으로 표시)  
+2. `IconButton`으로 월 이동 기능 구현  
+3. `Calendar.add(Calendar.MONTH, ±1)`로 월 변경  
 
 ##주요 특징
 - 월 이동 가능 (이전/다음)  
