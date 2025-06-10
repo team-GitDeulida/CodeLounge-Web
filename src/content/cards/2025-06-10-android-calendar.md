@@ -4,7 +4,7 @@ title: Android 캘린더
 description: 커스텀 캘린더
 category: android
 type: other
-image: /images/android/Aos-basicCalendar.png
+image: /images/android/Aos-basicCalendar.gif
 ---
 
 ```kotlin

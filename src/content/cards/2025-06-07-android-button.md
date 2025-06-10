@@ -4,7 +4,7 @@ title: Button
 description: Jetpack Compose 기본버튼
 category: android
 type: other
-image: /images/android/Aos-basicbutton.png
+image: /images/android/Aos-basicbutton.gif
 ---
 
 ```kotlin
