@@ -1,7 +1,7 @@
 ---
 id: 11
 title: Onboarding - Uikit
-description: 온보딩(UIPageViewController) 구성 예제
+description: UIPageViewController 온보딩
 category: UIKit
 type: other
 image: /images/UIKit/onboarding.gif
