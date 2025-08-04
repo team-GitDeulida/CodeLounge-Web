@@ -1,5 +1,5 @@
 ---
-id: 14
+id: 15
 title: Liquid Glass2
 description: Glass Design View
 category: SwiftUI
